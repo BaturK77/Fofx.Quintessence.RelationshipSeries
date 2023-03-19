@@ -3,16 +3,13 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
+using Fofx.Quintessence.RelationshipSeries.Helpers;
 
 namespace Fofx
 {
-  public class RelationshipRevisableDateValueRequestHelper : BaseRelationshipRevisableRequestHelper, ITimeSeriesRequestHelper
+  public class RelationshipRevisableDateValueRequestHelper : BaseRelationshipRevisableRequestHelper
   {
-    public override INullableReader GetDataReader(int[] entites, int[] factors, DatabaseRequestArgs args)
-    {
-      throw new NotImplementedException("");
-    }
-
+    
     public override INullableReader GetDataReader(int[] entites, int[] factors, int[] relationships, DatabaseRequestArgs args)
     {
       SqlParameter[] parameters = GetParameters(entites, factors, relationships, args);
